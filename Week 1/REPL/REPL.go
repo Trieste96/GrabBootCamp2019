@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+//eval
 func eval(input string) (result string, err error) {
 	s := strings.Split(strings.Trim(input, "\n"), " ")
 	if len(s) < 2 {

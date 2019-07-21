@@ -9,17 +9,25 @@ import (
 	"strings"
 )
 
-func validate(input string) (a, b float64, op string, err error) {
-	s := strings.Split(strings.Trim(input, "\n"), " ")
-	err = errors.New("Invalid input")
+func validate(input string) (num1, num2 float64, op string, err error) {
+	s := strings.Fields(input)
 	if len(s) != 3 {
-		return 0, 0, "", err
+		return 0, 0, "", errors.New("Invalid input")
 	}
-	num1, err1 := strconv.ParseFloat(s[0], 64)
-	num2, err2 := strconv.ParseFloat(s[2], 64)
+
+	num1, err = strconv.ParseFloat(s[0], 64)
+	if err != nil {
+		return 0, 0, "", errors.New("invalid format on first operand ")
+	}
+
+	num2, err = strconv.ParseFloat(s[1], 64)
+	if err != nil {
+		return 0, 0, "", errors.New("invalid format on second operand ")
+	}
+
 	op = s[1]
-	if err1 != nil || err2 != nil || strings.ContainsAny(op, "+-/*") == false {
-		return 0, 0, "", err
+	if strings.ContainsAny(op, "+-/*") == false {
+		return 0, 0, "", errors.New("invalid operator")
 	}
 	return num1, num2, op, nil
 }

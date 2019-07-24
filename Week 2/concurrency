@@ -1,0 +1,6 @@
+
+
+
+x := (<- chan string) //send only channel
+y := (chan <- string) //receive only channel
+

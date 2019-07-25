@@ -49,13 +49,13 @@ func ReadDir(dir string) (filePath []string, err error) {
 
 	for _, f := range files {
 		if f.IsDir() {
-			subFiles, err := ReadDir(dir + "\\" + f.Name())
+			subFiles, err := ReadDir(dir + "/" + f.Name())
 			if err != nil {
 				return nil, err
 			}
 			filePath = append(filePath, subFiles...)
 		} else {
-			filePath = append(filePath, dir+"\\"+f.Name())
+			filePath = append(filePath, dir+"/"+f.Name())
 		}
 	}
 	return filePath, nil
@@ -66,6 +66,7 @@ func printOccurence(m map[string]int) {
 	for k, v := range m {
 		fmt.Printf("%s=%d, ", k, v)
 	}
+	fmt.Println("")
 }
 
 //Create one gorountine for each file to push their words to the channel
@@ -81,6 +82,7 @@ func countWordAllFiles(dir string) {
 
 	var wg sync.WaitGroup
 	for _, f := range files {
+		fmt.Printf("File %s\n", f)
 		wg.Add(1)
 		go countWord(f, ch, &wg)
 	}

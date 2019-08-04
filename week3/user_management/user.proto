@@ -1,0 +1,41 @@
+syntax="proto3";
+
+package passenger_feeback;
+
+service FeedbackManagement {
+    rpc AddFeedBack(AddFeedbackRequest) returns  (FeedbackResponse);
+    rpc GetByPassengerId(GetByPassengerIdRequest) returns (FeedbackListResponse);
+    rpc GetByBookingCode(GetByBookingCodeRequest) returns (FeedbackListResponse);
+    rpc DeleteByPassengerId(DeleteByPassengerIdRequest) returns(FeedbackResponse);
+}
+
+message Feedback {
+    string bookingCode = 1;
+    int32 passengerID = 2;
+    string feedback = 3;
+}
+
+message AddFeedbackRequest{
+    Feedback feedback = 1;
+}
+
+message GetByPassengerIdRequest{
+    int32 passengerID = 1;
+}
+
+message GetByBookingCodeRequest{
+    string bookingCode = 1;
+}
+
+message DeleteByPassengerIdRequest{
+    int32 passengerID = 1;
+}
+
+message FeedbackResponse {
+    Feedback feedback = 1;
+    bool success = 2;
+}
+
+message FeedbackListResponse {
+    repeated Feedback feedbackList = 1;
+} 

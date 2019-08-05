@@ -5,18 +5,18 @@ package passenger_feeback;
 service FeedbackManagement {
     rpc AddFeedBack(AddFeedbackRequest) returns  (FeedbackResponse);
     rpc GetByPassengerId(GetByPassengerIdRequest) returns (FeedbackListResponse);
-    rpc GetByBookingCode(GetByBookingCodeRequest) returns (FeedbackListResponse);
+    rpc GetByBookingCode(GetByBookingCodeRequest) returns (FeedbackResponse);
     rpc DeleteByPassengerId(DeleteByPassengerIdRequest) returns(FeedbackResponse);
 }
 
-message Feedback {
+message PassengerFeedback {
     string bookingCode = 1;
     int32 passengerID = 2;
     string feedback = 3;
 }
 
 message AddFeedbackRequest{
-    Feedback feedback = 1;
+    PassengerFeedback passengerFeedback = 1;
 }
 
 message GetByPassengerIdRequest{
@@ -32,10 +32,11 @@ message DeleteByPassengerIdRequest{
 }
 
 message FeedbackResponse {
-    Feedback feedback = 1;
+    PassengerFeedback passengerFeedback = 1;
     bool success = 2;
 }
 
 message FeedbackListResponse {
-    repeated Feedback feedbackList = 1;
+    repeated PassengerFeedback feedbackList = 1;
+    bool success = 2;
 } 

@@ -24,7 +24,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type Feedback struct {
+type PassengerFeedback struct {
 	BookingCode          string   `protobuf:"bytes,1,opt,name=bookingCode,proto3" json:"bookingCode,omitempty"`
 	PassengerID          int32    `protobuf:"varint,2,opt,name=passengerID,proto3" json:"passengerID,omitempty"`
 	Feedback             string   `protobuf:"bytes,3,opt,name=feedback,proto3" json:"feedback,omitempty"`
@@ -33,46 +33,46 @@ type Feedback struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Feedback) Reset()         { *m = Feedback{} }
-func (m *Feedback) String() string { return proto.CompactTextString(m) }
-func (*Feedback) ProtoMessage()    {}
-func (*Feedback) Descriptor() ([]byte, []int) {
+func (m *PassengerFeedback) Reset()         { *m = PassengerFeedback{} }
+func (m *PassengerFeedback) String() string { return proto.CompactTextString(m) }
+func (*PassengerFeedback) ProtoMessage()    {}
+func (*PassengerFeedback) Descriptor() ([]byte, []int) {
 	return fileDescriptor_116e343673f7ffaf, []int{0}
 }
 
-func (m *Feedback) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Feedback.Unmarshal(m, b)
+func (m *PassengerFeedback) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PassengerFeedback.Unmarshal(m, b)
 }
-func (m *Feedback) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Feedback.Marshal(b, m, deterministic)
+func (m *PassengerFeedback) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PassengerFeedback.Marshal(b, m, deterministic)
 }
-func (m *Feedback) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Feedback.Merge(m, src)
+func (m *PassengerFeedback) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PassengerFeedback.Merge(m, src)
 }
-func (m *Feedback) XXX_Size() int {
-	return xxx_messageInfo_Feedback.Size(m)
+func (m *PassengerFeedback) XXX_Size() int {
+	return xxx_messageInfo_PassengerFeedback.Size(m)
 }
-func (m *Feedback) XXX_DiscardUnknown() {
-	xxx_messageInfo_Feedback.DiscardUnknown(m)
+func (m *PassengerFeedback) XXX_DiscardUnknown() {
+	xxx_messageInfo_PassengerFeedback.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Feedback proto.InternalMessageInfo
+var xxx_messageInfo_PassengerFeedback proto.InternalMessageInfo
 
-func (m *Feedback) GetBookingCode() string {
+func (m *PassengerFeedback) GetBookingCode() string {
 	if m != nil {
 		return m.BookingCode
 	}
 	return ""
 }
 
-func (m *Feedback) GetPassengerID() int32 {
+func (m *PassengerFeedback) GetPassengerID() int32 {
 	if m != nil {
 		return m.PassengerID
 	}
 	return 0
 }
 
-func (m *Feedback) GetFeedback() string {
+func (m *PassengerFeedback) GetFeedback() string {
 	if m != nil {
 		return m.Feedback
 	}
@@ -80,10 +80,10 @@ func (m *Feedback) GetFeedback() string {
 }
 
 type AddFeedbackRequest struct {
-	Feedback             *Feedback `protobuf:"bytes,1,opt,name=feedback,proto3" json:"feedback,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	PassengerFeedback    *PassengerFeedback `protobuf:"bytes,1,opt,name=passengerFeedback,proto3" json:"passengerFeedback,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
 }
 
 func (m *AddFeedbackRequest) Reset()         { *m = AddFeedbackRequest{} }
@@ -111,9 +111,9 @@ func (m *AddFeedbackRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_AddFeedbackRequest proto.InternalMessageInfo
 
-func (m *AddFeedbackRequest) GetFeedback() *Feedback {
+func (m *AddFeedbackRequest) GetPassengerFeedback() *PassengerFeedback {
 	if m != nil {
-		return m.Feedback
+		return m.PassengerFeedback
 	}
 	return nil
 }
@@ -236,11 +236,11 @@ func (m *DeleteByPassengerIdRequest) GetPassengerID() int32 {
 }
 
 type FeedbackResponse struct {
-	Feedback             *Feedback `protobuf:"bytes,1,opt,name=feedback,proto3" json:"feedback,omitempty"`
-	Success              bool      `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	PassengerFeedback    *PassengerFeedback `protobuf:"bytes,1,opt,name=passengerFeedback,proto3" json:"passengerFeedback,omitempty"`
+	Success              bool               `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
 }
 
 func (m *FeedbackResponse) Reset()         { *m = FeedbackResponse{} }
@@ -268,9 +268,9 @@ func (m *FeedbackResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FeedbackResponse proto.InternalMessageInfo
 
-func (m *FeedbackResponse) GetFeedback() *Feedback {
+func (m *FeedbackResponse) GetPassengerFeedback() *PassengerFeedback {
 	if m != nil {
-		return m.Feedback
+		return m.PassengerFeedback
 	}
 	return nil
 }
@@ -283,10 +283,11 @@ func (m *FeedbackResponse) GetSuccess() bool {
 }
 
 type FeedbackListResponse struct {
-	FeedbackList         []*Feedback `protobuf:"bytes,1,rep,name=feedbackList,proto3" json:"feedbackList,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
+	FeedbackList         []*PassengerFeedback `protobuf:"bytes,1,rep,name=feedbackList,proto3" json:"feedbackList,omitempty"`
+	Success              bool                 `protobuf:"varint,2,opt,name=success,proto3" json:"success,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
 }
 
 func (m *FeedbackListResponse) Reset()         { *m = FeedbackListResponse{} }
@@ -314,15 +315,22 @@ func (m *FeedbackListResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FeedbackListResponse proto.InternalMessageInfo
 
-func (m *FeedbackListResponse) GetFeedbackList() []*Feedback {
+func (m *FeedbackListResponse) GetFeedbackList() []*PassengerFeedback {
 	if m != nil {
 		return m.FeedbackList
 	}
 	return nil
 }
 
+func (m *FeedbackListResponse) GetSuccess() bool {
+	if m != nil {
+		return m.Success
+	}
+	return false
+}
+
 func init() {
-	proto.RegisterType((*Feedback)(nil), "passenger_feeback.Feedback")
+	proto.RegisterType((*PassengerFeedback)(nil), "passenger_feeback.PassengerFeedback")
 	proto.RegisterType((*AddFeedbackRequest)(nil), "passenger_feeback.AddFeedbackRequest")
 	proto.RegisterType((*GetByPassengerIdRequest)(nil), "passenger_feeback.GetByPassengerIdRequest")
 	proto.RegisterType((*GetByBookingCodeRequest)(nil), "passenger_feeback.GetByBookingCodeRequest")
@@ -334,29 +342,29 @@ func init() {
 func init() { proto.RegisterFile("user.proto", fileDescriptor_116e343673f7ffaf) }
 
 var fileDescriptor_116e343673f7ffaf = []byte{
-	// 339 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x93, 0x4d, 0x4b, 0xfb, 0x40,
-	0x10, 0xc6, 0xc9, 0xbf, 0xfc, 0xb5, 0x4e, 0x3d, 0xd4, 0x55, 0x30, 0xc4, 0x4b, 0x88, 0x88, 0x45,
-	0xb0, 0x87, 0x7a, 0xf0, 0x20, 0x28, 0xc6, 0xa2, 0x08, 0x16, 0x24, 0x17, 0xf1, 0x24, 0x79, 0x99,
-	0x84, 0x58, 0xcd, 0xc6, 0xec, 0xe6, 0xe0, 0x77, 0xf2, 0x43, 0x4a, 0x42, 0x77, 0xb3, 0x6d, 0x5e,
-	0x2c, 0xbd, 0x65, 0x27, 0xfb, 0x3c, 0xbf, 0xc9, 0xcc, 0x13, 0x80, 0x9c, 0x61, 0x36, 0x4e, 0x33,
-	0xca, 0x29, 0xd9, 0x4b, 0x5d, 0xc6, 0x30, 0x89, 0x30, 0x7b, 0x0b, 0x11, 0x3d, 0xd7, 0x9f, 0x5b,
-	0xef, 0xd0, 0xbf, 0x47, 0x0c, 0x8a, 0x67, 0x62, 0xc2, 0xc0, 0xa3, 0x74, 0x1e, 0x27, 0xd1, 0x1d,
-	0x0d, 0x50, 0xd7, 0x4c, 0x6d, 0xb4, 0xe3, 0xa8, 0xa5, 0xe2, 0x86, 0xb4, 0x78, 0x9c, 0xea, 0xff,
-	0x4c, 0x6d, 0xf4, 0xdf, 0x51, 0x4b, 0xc4, 0x80, 0x7e, 0xb8, 0xf0, 0xd3, 0x7b, 0xa5, 0x81, 0x3c,
-	0x5b, 0x33, 0x20, 0xb7, 0x41, 0x20, 0x70, 0x0e, 0x7e, 0xe5, 0xc8, 0x38, 0xb9, 0x54, 0x14, 0x05,
-	0x72, 0x30, 0x39, 0x1a, 0xd7, 0xfa, 0x1c, 0x4b, 0x55, 0x65, 0x77, 0x05, 0x87, 0x0f, 0xc8, 0xed,
-	0xef, 0x67, 0x89, 0x0f, 0x84, 0xe7, 0x4a, 0x9f, 0x5a, 0xad, 0x4f, 0x29, 0xb6, 0xab, 0xaf, 0x53,
-	0xc4, 0xdd, 0x63, 0xb0, 0xae, 0xc1, 0x98, 0xe2, 0x07, 0x72, 0xdc, 0x10, 0x8e, 0x30, 0xac, 0xa6,
-	0xc0, 0x52, 0x9a, 0x30, 0xdc, 0x78, 0x0c, 0x44, 0x87, 0x6d, 0x96, 0xfb, 0x3e, 0x32, 0x56, 0xee,
-	0xa3, 0xef, 0x88, 0xa3, 0xf5, 0x02, 0x07, 0xe2, 0xfe, 0x53, 0xcc, 0xb8, 0x44, 0xdd, 0xc0, 0x6e,
-	0xa8, 0xd4, 0x75, 0xcd, 0xec, 0xfd, 0x85, 0x5b, 0x12, 0x4c, 0x7e, 0x7a, 0x40, 0xc4, 0xab, 0x99,
-	0x9b, 0xb8, 0x11, 0x7e, 0x62, 0xc2, 0xc9, 0x2b, 0x0c, 0x16, 0xfb, 0xb5, 0x8b, 0xc6, 0x4e, 0x1a,
-	0x0c, 0xeb, 0xfb, 0x37, 0x8e, 0xbb, 0xb8, 0xa2, 0xe5, 0x08, 0x86, 0xab, 0xbb, 0x26, 0x67, 0x0d,
-	0xc2, 0x96, 0x40, 0x18, 0xa7, 0x1d, 0x90, 0xa5, 0xd9, 0x08, 0x90, 0x92, 0x8b, 0x76, 0x50, 0x3d,
-	0x3c, 0xeb, 0x83, 0x62, 0xd8, 0x6f, 0xc8, 0x10, 0x39, 0x6f, 0xd0, 0xb7, 0x67, 0x6d, 0xad, 0xe1,
-	0x79, 0x5b, 0xe5, 0xdf, 0x7f, 0xf1, 0x1b, 0x00, 0x00, 0xff, 0xff, 0x40, 0x65, 0x53, 0x6a, 0x0b,
-	0x04, 0x00, 0x00,
+	// 350 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x94, 0x41, 0x4b, 0xfb, 0x40,
+	0x10, 0xc5, 0xd9, 0x7f, 0xf9, 0x6b, 0x9d, 0x7a, 0x68, 0x57, 0xc1, 0x90, 0x53, 0x88, 0x8a, 0x45,
+	0xb0, 0x87, 0x7a, 0x14, 0x04, 0x6b, 0x51, 0x0b, 0x0a, 0xb2, 0x37, 0x4f, 0x92, 0x26, 0xd3, 0x18,
+	0xaa, 0xd9, 0x98, 0xdd, 0x1c, 0xf4, 0xe4, 0xc7, 0xf1, 0x63, 0x4a, 0x42, 0x36, 0x49, 0xbb, 0x49,
+	0x09, 0x82, 0xc7, 0x9d, 0xce, 0x9b, 0xdf, 0x9b, 0xe9, 0x23, 0x00, 0x89, 0xc0, 0x78, 0x14, 0xc5,
+	0x5c, 0x72, 0x3a, 0x88, 0x1c, 0x21, 0x30, 0xf4, 0x31, 0x7e, 0x5e, 0x20, 0xce, 0x1d, 0x77, 0x69,
+	0x0b, 0x18, 0x3c, 0xaa, 0xe2, 0x0d, 0xa2, 0x97, 0x16, 0xa9, 0x05, 0xbd, 0x39, 0xe7, 0xcb, 0x20,
+	0xf4, 0xaf, 0xb9, 0x87, 0x06, 0xb1, 0xc8, 0x70, 0x87, 0x55, 0x4b, 0x69, 0x47, 0x31, 0x6b, 0x36,
+	0x35, 0xfe, 0x59, 0x64, 0xf8, 0x9f, 0x55, 0x4b, 0xd4, 0x84, 0xee, 0x22, 0x9f, 0x67, 0x74, 0xb2,
+	0x01, 0xc5, 0xdb, 0x7e, 0x01, 0x7a, 0xe5, 0x79, 0x0a, 0xc7, 0xf0, 0x3d, 0x41, 0x21, 0x29, 0x83,
+	0xd2, 0x9f, 0xfa, 0x2d, 0x63, 0xf7, 0xc6, 0x47, 0x23, 0xcd, 0xf9, 0x48, 0xb3, 0xcd, 0x74, 0xb9,
+	0x7d, 0x01, 0x07, 0xb7, 0x28, 0x27, 0x1f, 0x45, 0xf3, 0xcc, 0x53, 0xb8, 0xb5, 0x15, 0x88, 0xb6,
+	0x42, 0x21, 0x9e, 0x94, 0x8b, 0x57, 0xc4, 0x9b, 0x2f, 0x64, 0x5f, 0x82, 0x39, 0xc5, 0x57, 0x94,
+	0xf8, 0x4b, 0xf8, 0x17, 0x81, 0x7e, 0x79, 0x21, 0x11, 0xf1, 0x50, 0xe0, 0x5f, 0x9c, 0x88, 0x1a,
+	0xb0, 0x2d, 0x12, 0xd7, 0x45, 0x21, 0xb2, 0xbf, 0xb1, 0xcb, 0xd4, 0xd3, 0xfe, 0x84, 0x7d, 0xd5,
+	0x75, 0x1f, 0x08, 0x59, 0xb8, 0xb8, 0x83, 0xdd, 0x45, 0xa5, 0x6e, 0x10, 0xab, 0xd3, 0xda, 0xc0,
+	0x8a, 0xb2, 0x99, 0x3d, 0xfe, 0xee, 0x00, 0x55, 0xa2, 0x07, 0x27, 0x74, 0x7c, 0x7c, 0xc3, 0x50,
+	0xd2, 0x27, 0xe8, 0xe5, 0xc9, 0x99, 0xa4, 0xde, 0x8f, 0x6b, 0x98, 0x7a, 0xb2, 0xcc, 0xc3, 0x9a,
+	0x36, 0xed, 0xb6, 0x3e, 0xf4, 0xd7, 0xa3, 0x42, 0x4f, 0x6b, 0x84, 0x0d, 0x79, 0x32, 0x4f, 0x36,
+	0x40, 0x56, 0xce, 0xe7, 0xe6, 0xa0, 0x4a, 0xac, 0x9a, 0x41, 0x7a, 0xf6, 0xda, 0x6d, 0x13, 0xc0,
+	0x5e, 0x4d, 0xfc, 0xe8, 0x59, 0x8d, 0xb6, 0x39, 0xa6, 0xad, 0x50, 0xf3, 0xad, 0xec, 0xe3, 0x72,
+	0xfe, 0x13, 0x00, 0x00, 0xff, 0xff, 0x90, 0xbc, 0x1b, 0x9b, 0x6a, 0x04, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -373,7 +381,7 @@ const _ = grpc.SupportPackageIsVersion4
 type FeedbackManagementClient interface {
 	AddFeedBack(ctx context.Context, in *AddFeedbackRequest, opts ...grpc.CallOption) (*FeedbackResponse, error)
 	GetByPassengerId(ctx context.Context, in *GetByPassengerIdRequest, opts ...grpc.CallOption) (*FeedbackListResponse, error)
-	GetByBookingCode(ctx context.Context, in *GetByBookingCodeRequest, opts ...grpc.CallOption) (*FeedbackListResponse, error)
+	GetByBookingCode(ctx context.Context, in *GetByBookingCodeRequest, opts ...grpc.CallOption) (*FeedbackResponse, error)
 	DeleteByPassengerId(ctx context.Context, in *DeleteByPassengerIdRequest, opts ...grpc.CallOption) (*FeedbackResponse, error)
 }
 
@@ -403,8 +411,8 @@ func (c *feedbackManagementClient) GetByPassengerId(ctx context.Context, in *Get
 	return out, nil
 }
 
-func (c *feedbackManagementClient) GetByBookingCode(ctx context.Context, in *GetByBookingCodeRequest, opts ...grpc.CallOption) (*FeedbackListResponse, error) {
-	out := new(FeedbackListResponse)
+func (c *feedbackManagementClient) GetByBookingCode(ctx context.Context, in *GetByBookingCodeRequest, opts ...grpc.CallOption) (*FeedbackResponse, error) {
+	out := new(FeedbackResponse)
 	err := c.cc.Invoke(ctx, "/passenger_feeback.FeedbackManagement/GetByBookingCode", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -425,7 +433,7 @@ func (c *feedbackManagementClient) DeleteByPassengerId(ctx context.Context, in *
 type FeedbackManagementServer interface {
 	AddFeedBack(context.Context, *AddFeedbackRequest) (*FeedbackResponse, error)
 	GetByPassengerId(context.Context, *GetByPassengerIdRequest) (*FeedbackListResponse, error)
-	GetByBookingCode(context.Context, *GetByBookingCodeRequest) (*FeedbackListResponse, error)
+	GetByBookingCode(context.Context, *GetByBookingCodeRequest) (*FeedbackResponse, error)
 	DeleteByPassengerId(context.Context, *DeleteByPassengerIdRequest) (*FeedbackResponse, error)
 }
 
@@ -439,7 +447,7 @@ func (*UnimplementedFeedbackManagementServer) AddFeedBack(ctx context.Context, r
 func (*UnimplementedFeedbackManagementServer) GetByPassengerId(ctx context.Context, req *GetByPassengerIdRequest) (*FeedbackListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByPassengerId not implemented")
 }
-func (*UnimplementedFeedbackManagementServer) GetByBookingCode(ctx context.Context, req *GetByBookingCodeRequest) (*FeedbackListResponse, error) {
+func (*UnimplementedFeedbackManagementServer) GetByBookingCode(ctx context.Context, req *GetByBookingCodeRequest) (*FeedbackResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByBookingCode not implemented")
 }
 func (*UnimplementedFeedbackManagementServer) DeleteByPassengerId(ctx context.Context, req *DeleteByPassengerIdRequest) (*FeedbackResponse, error) {

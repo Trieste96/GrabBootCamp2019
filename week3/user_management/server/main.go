@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	pb "GrabAssignments/week3/user_management"
+	pb "GrabBootCamp2019/week3/user_management"
 
 	"google.golang.org/grpc"
 )
@@ -70,4 +70,5 @@ func main() {
 		log.Fatal("Failed to create server")
 	}
 	defer listen.Close()
+	pb.RegisterFeedbackManagementServer(s)
 }

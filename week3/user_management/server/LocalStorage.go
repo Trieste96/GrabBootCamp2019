@@ -1,7 +1,7 @@
 package main
 
 import (
-	pb "GrabAssignments/week3/user_management"
+	pb "GrabBootCamp2019/week3/user_management"
 	"errors"
 )
 
